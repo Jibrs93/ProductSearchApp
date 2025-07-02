@@ -29,6 +29,41 @@ Una aplicación de prueba técnica para desarrolladores iOS, construida en **Swi
 
 ---
 
+## 🌐 API utilizada
+
+La app consume datos desde el servicio oficial de Liverpool:
+
+**Endpoint base:**
+
+```
+https://shoppapp.liverpool.com.mx/appclienteservices/services/v8/plp/sf
+```
+
+**Parámetros clave:**
+
+* `page-number=1`: número de página (soporta paginación)
+* `search-string=zapato`: término de búsqueda
+* `number-of-items-per-page=40`: cantidad de productos por página
+* `sort-option=highestPrice`: criterio de ordenamiento
+
+**Ejemplos de búsqueda:**
+
+* Sin ordenamiento:
+  [https://shoppapp.liverpool.com.mx/appclienteservices/services/v8/plp/sf?page-number=1\&search-string=zapato\&force-plp=false\&number-of-items-per-page=40\&cleanProductName=false](https://shoppapp.liverpool.com.mx/appclienteservices/services/v8/plp/sf?page-number=1&search-string=zapato&force-plp=false&number-of-items-per-page=40&cleanProductName=false)
+
+* Con ordenamiento (mayor precio):
+  [https://shoppapp.liverpool.com.mx/appclienteservices/services/v8/plp/sf?page-number=1\&search-string=zapato\&force-plp=false\&number-of-items-per-page=40\&cleanProductName=false\&sort-option=highestPrice](https://shoppapp.liverpool.com.mx/appclienteservices/services/v8/plp/sf?page-number=1&search-string=zapato&force-plp=false&number-of-items-per-page=40&cleanProductName=false&sort-option=highestPrice)
+
+* Otros valores para `sort-option`:
+
+  * `relevance`
+  * `lowestPrice`
+  * `highestPrice`
+  * `newest`
+  * `ratings`
+
+---
+
 ## 📂 Estructura del Proyecto
 
 ```
@@ -64,27 +99,6 @@ Liverpool/
 └── Tests/
     └── ProductListViewModelTests.swift
 ```
-
----
-
-## 📅 Hecho en ...
-
-* Xcode 15+
-* iOS 16.0+
-
----
-
-## ✅ Para correr la app
-
-1. Clona el repositorio:
-
-```bash
-git clone https://github.com/tuusuario/LiverpoolProductSearch.git
-```
-
-2. Abre `Liverpool.xcodeproj` o `.xcworkspace` en Xcode
-3. Ejecuta (Cmd + R) en un simulador o dispositivo
-
 ---
 
 ## 📊 Pruebas Unitarias
